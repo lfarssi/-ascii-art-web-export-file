@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>ASCII Art Web</title>
+</head>
+<body>
+    <h1>ASCII-ART-WEB</h1>
+
+    <form action="/ascii-art" method="post" class="form">
+        <textarea name="data" id="textarea" maxlength="500" cols="40" rows="10" required placeholder="Enter your text here..."></textarea>
+        <div class="button-group">
+            <input type="radio" name="banner"  id="standard" value="standard" checked>
+            <label for="standard" class="button">Standard</label>
+            <input type="radio" name="banner"  id="shadow" value="shadow">
+            <label for="shadow" class="button">Shadow</label>
+            <input type="radio" name="banner"  id="thinkertoy" value="thinkertoy">
+            <label class="button" for="thinkertoy">Thinkertoy</label>
+        </div>
+        <div class="btn">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    {{if .Res }}
+    <h2 class="res">Result:</h2>
+    <div class="container">
+        <div class="result">
+            <a href="/export"><i class="fa-solid fa-download"></i></a>
+            <pre>{{.Res}}</pre>
+        </div>
+    </div>
+    <div class="btn2">
+        <a href="/">clear</a>
+    </div>
+    {{end}}
+</body>
+</html>
